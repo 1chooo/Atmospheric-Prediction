@@ -48,10 +48,12 @@ for line1 in dataReader1:
             list_Td1.append(Td1)
 
             q1 = round((1000 * (((ePrime1) / (Rv * (temp1 + 273.15))) /
-                        (((p1 - ePrime1) / (Rd * (temp1 + 273.15))) + ((ePrime1) / (Rv * (temp1 + 273.15)))))), 2)
+                        (((p1 - ePrime1) / (Rd * (temp1 + 273.15))) + 
+                         ((ePrime1) / (Rv * (temp1 + 273.15)))))), 2)
             list_q1.append(q1)
 
-            r1 = round((1000 * (((ePrime1) / (Rv * (temp1 + 273.15))) / ((p1 - ePrime1) / (Rd * (temp1 + 273.15))))), 2)
+            r1 = round((1000 * (((ePrime1) / (Rv * (temp1 + 273.15))) / 
+                       ((p1 - ePrime1) / (Rd * (temp1 + 273.15))))), 2)
             list_r1.append(r1)
 
 inputFile1.close()
