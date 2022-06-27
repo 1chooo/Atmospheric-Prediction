@@ -1,10 +1,3 @@
-"""
-HW 6
-Name: 林群賀
-Student Number: 109601003
-Course 大氣測計
-"""
-
 import csv
 import math
 import matplotlib.pyplot as plt
@@ -160,7 +153,7 @@ plt.ylabel("Height (m)")
 plt.legend(["Height"])
 plt.title("Pibal's Height to Distance", fontweight = "bold")
 plt.grid()
-plt.savefig('Height_to_Distance.png', dpi = 900)
+plt.savefig('./image/Height_to_Distance.png', dpi = 900)
 
 new_height = list_height        # because the interval
 del new_height[77]              # is the total minus one
@@ -172,7 +165,7 @@ plt.xlabel("Height (m)")
 plt.legend(["wd"])
 plt.title("Pibal's Height to WindDirection", fontweight = "bold")
 plt.grid()
-plt.savefig('Pibal_Height_to_WindDirection.png', dpi = 900)
+plt.savefig('./image/Pibal_Height_to_WindDirection.png', dpi = 900)
 
 plt.figure("Pibal's Height to WindSpeed")
 plt.plot(ws_list, new_height)
@@ -181,5 +174,5 @@ plt.ylabel("Height (m)")
 plt.legend(["ws"])
 plt.title("Pibal's Height to WindSpeed", fontweight = "bold")
 plt.grid()
-plt.savefig('Pibal_Height_to_WindSpeed.png', dpi = 900)
+plt.savefig('./image/Pibal_Height_to_WindSpeed.png', dpi = 900)
 plt.show()
