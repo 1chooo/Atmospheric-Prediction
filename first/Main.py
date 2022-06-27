@@ -4,13 +4,15 @@ Ans the date which we pick up to analyze is 2021/9/8.
 """
 
 
-# Import the package.
+""" Import the package. """
+
 import csv
 import math
 import matplotlib.pyplot as plt
 
 
-# Announce the variable.
+""" Announce the variable and define the parameter. """
+
 eS1, ePrime1, Td1, q1, r1, temp1, rh1, p1 = 0, 0, 0, 0, 0, 0, 0, 0
 eS2, ePrime2, Td2, q2, r2, temp2, rh2, p2 = 0, 0, 0, 0, 0, 0, 0, 0
 Rd = 287.0  # J/(kg*K)
