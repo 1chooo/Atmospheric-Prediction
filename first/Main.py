@@ -102,7 +102,7 @@ print(f"Specific humidity:              maximum: {max(list_q1)}, {max(list_q2)};
 print(f"Mixing ratio:                   maximum: {max(list_r1)}, {max(list_r2)}; minimum: {min(list_r1)}, {min(list_r2)}")
 
 
-""" Plot the line charts. """
+""" Plot the each line charts. """
 
 plt.figure("9/8 Saturated Water Vapor Pressure")
 plt.plot(list_time, list_eS1, linewidth = 1.0)
