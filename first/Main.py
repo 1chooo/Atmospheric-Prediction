@@ -1,13 +1,16 @@
 """ 
 This code is to analysis the atmospheric data between two towers.
-Ans the date is 2021/9/8.
+Ans the date which we pick up to analyze is 2021/9/8.
 """
 
+
+# Import the package.
 import csv
 import math
 import matplotlib.pyplot as plt
 
 
+# Announce the variable.
 eS1, ePrime1, Td1, q1, r1, temp1, rh1, p1 = 0, 0, 0, 0, 0, 0, 0, 0
 eS2, ePrime2, Td2, q2, r2, temp2, rh2, p2 = 0, 0, 0, 0, 0, 0, 0, 0
 Rd = 287.0  # J/(kg*K)
@@ -16,17 +19,17 @@ list_time = []                                                              # x
 list_eS1, list_ePrime1, list_Td1, list_q1, list_r1 = [], [], [], [], []     # y1
 list_eS2, list_ePrime2, list_Td2, list_q2, list_r2 = [], [], [], [], []     # y2
 
-""" open file """
+""" Open file and pre-processing the data. """
 
 inputFile1 = open("10M_tower_data1.csv", 'r')
 inputFile2 = open("10M_tower_data2.csv", 'r')
 dataReader1 = csv.reader(inputFile1)
 dataReader2 = csv.reader(inputFile2)
 
+# The first towel.
 for line1 in dataReader1:
-
-    """ Solve the first tower data """
     count = 0
+
     if line1[1] == '9' and line1[2] == '8':
         list_time.append(float(line1[3]) + (float(line1[4]) / 60.0))
         temp1 = round(float(line1[5]), 1)
@@ -37,7 +40,6 @@ for line1 in dataReader1:
             count += 1
 
         if count == 0:
-
             eS1 = round((6.112 * math.exp((17.67 * temp1) / (temp1 + 243.5))), 2)
             list_eS1.append(eS1)
 
@@ -59,11 +61,10 @@ for line1 in dataReader1:
 inputFile1.close()
 
 
+# The second toewl.
 for line2 in dataReader2:
-
-    """ Solve the second tower data """
-
     count = 0
+
     if line2[1] == '9' and line2[2] == '8':
         temp2 = round(float(line2[5]), 1)
         rh2 = round(float(line2[6]), 1)
@@ -73,7 +74,6 @@ for line2 in dataReader2:
             count += 1
 
         if count == 0:
-
             eS2 = round((6.112 * math.exp((17.67 * temp2) / (temp2 + 243.5))), 2)
             list_eS2.append(eS2)
 
@@ -93,13 +93,13 @@ for line2 in dataReader2:
 inputFile2.close()
 
 
-""" Find the maximum value of each towel. """
+""" Find the maximum and minimum value of each towel and show on the display. """
 
-print("Saturated water vapor pressure:", "maximum:", max(list_eS1),     ',', max(list_eS2),     ", minimum:", min(list_eS1),     ',', min(list_eS2))
-print("Water vapor pressure:          ", "maximum:", max(list_ePrime1), ',', max(list_ePrime2), ", minimum:", min(list_ePrime1), ',', min(list_ePrime2))
-print("Dew point temperature:         ", "maximum:", max(list_Td1),     ',', max(list_Td2),     ", minimum:", min(list_Td1),     ',', min(list_Td2))
-print("Specific humidity:             ", "maximum:", max(list_q1),      ',', max(list_q2),      ", minimum:", min(list_q1),      ',', min(list_q2))
-print("Mixing ratio:                  ", "maximum:", max(list_r1),      ',', max(list_r2),      ", minimum:", min(list_r1),      ',', min(list_r2))
+print(f"Saturated water vapor pressure: maximum: {max(list_eS1)}, {max(list_eS2)}; minimum: {min(list_eS1)}, {min(list_eS2)}")
+print(f"Water vapor pressure:           maximum: {max(list_ePrime1)}, {max(list_ePrime2)}; minimum: {min(list_ePrime1)}, {min(list_ePrime2)}")
+print(f"Dew point temperature:          maximum: {max(list_Td1)}, {max(list_Td2)}; minimum: {min(list_Td1)}, {min(list_Td2)}")
+print(f"Specific humidity:              maximum: {max(list_q1)}, {max(list_q2)}; minimum: {min(list_q1)}, {min(list_q2)}")
+print(f"Mixing ratio:                   maximum: {max(list_r1)}, {max(list_r2)}; minimum: {min(list_r1)}, {min(list_r2)}")
 
 
 """ Plot the line charts. """
