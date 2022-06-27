@@ -112,7 +112,7 @@ plt.title("9/8 Saturated Water Vapor Pressure", fontweight = "bold")
 plt.xticks(range(0, 25, 1))
 plt.xlim(0, 24.0001)
 plt.grid()
-# plt.savefig('2.png', dpi = 10000)
+plt.savefig('./image/Saturated_Water_Vapor_Pressure.png', dpi = 300)
 
 
 plt.figure("9/8 Water Vapor Pressure")
@@ -125,7 +125,7 @@ plt.title("9/8 Water Vapor Pressure", fontweight = "bold")
 plt.xticks(range(0, 25, 1))
 plt.xlim(0, 24.0001)
 plt.grid()
-# plt.savefig('Water_Vapor_Pressure.png', dpi = 300)
+plt.savefig('./image/Water_Vapor_Pressure.png', dpi = 300)
 
 
 plt.figure("9/8 Dew Point Temperature")
@@ -138,7 +138,7 @@ plt.title("9/8 Dew Point Temperature", fontweight = "bold")
 plt.xticks(range(0, 25, 1))
 plt.xlim(0, 24.0001)
 plt.grid()
-# plt.savefig('Dew_Point_Temperature.png', dpi = 300)
+plt.savefig('./image/Dew_Point_Temperature.png', dpi = 300)
 
 
 plt.figure("9/8 Specific Humidity")
@@ -151,7 +151,7 @@ plt.title("9/8 Specific Humidity", fontweight = "bold")
 plt.xticks(range(0, 25, 1))
 plt.xlim(0, 24.0001)
 plt.grid()
-# plt.savefig('Specific_Humidity.png', dpi = 300)
+plt.savefig('./image/Specific_Humidity.png', dpi = 300)
 
 
 plt.figure("9/8 Mixing Ratio")
@@ -164,7 +164,7 @@ plt.title("9/8 Mixing Ratio", fontweight = "bold")
 plt.xticks(range(0, 25, 1))
 plt.xlim(0, 24.0001)
 plt.grid()
-# plt.savefig('Mixing_Ratio.png', dpi = 300)
+plt.savefig('./image/Mixing_Ratio.png', dpi = 300)
 
 
 plt.show()
