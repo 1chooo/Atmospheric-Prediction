@@ -1,11 +1,19 @@
+""" The goal of this analysis is to predict the trend of pibal. """
+
+
+""" Import the package we need. """
+
 import csv
 import math
 import matplotlib.pyplot as plt
 
+
+""" Initialize the variable we need. """
 time, wd, elevation = 0, 0, 0
 list_time, list_wd, list_elevation = [], [], []
 
-""" Get the data what I want. """
+
+""" Get the data what We want. """
 
 inputFile = open("pibal_data.csv", 'r')
 dataReader = csv.reader(inputFile)
@@ -153,10 +161,11 @@ plt.ylabel("Height (m)")
 plt.legend(["Height"])
 plt.title("Pibal's Height to Distance", fontweight = "bold")
 plt.grid()
-plt.savefig('./image/Height_to_Distance.png', dpi = 900)
+plt.savefig('./image/Height_to_Distance.png', dpi = 300)
 
-new_height = list_height        # because the interval
-del new_height[77]              # is the total minus one
+# Because the interval is the total minus one.
+new_height = list_height        
+del new_height[77]              
 
 plt.figure("Pibal's Height to WindDirection")
 plt.plot(new_height, wd_list)
@@ -165,7 +174,7 @@ plt.xlabel("Height (m)")
 plt.legend(["wd"])
 plt.title("Pibal's Height to WindDirection", fontweight = "bold")
 plt.grid()
-plt.savefig('./image/Pibal_Height_to_WindDirection.png', dpi = 900)
+plt.savefig('./image/Pibal_Height_to_WindDirection.png', dpi = 300)
 
 plt.figure("Pibal's Height to WindSpeed")
 plt.plot(ws_list, new_height)
@@ -174,5 +183,5 @@ plt.ylabel("Height (m)")
 plt.legend(["ws"])
 plt.title("Pibal's Height to WindSpeed", fontweight = "bold")
 plt.grid()
-plt.savefig('./image/Pibal_Height_to_WindSpeed.png', dpi = 900)
+plt.savefig('./image/Pibal_Height_to_WindSpeed.png', dpi = 300)
 plt.show()
