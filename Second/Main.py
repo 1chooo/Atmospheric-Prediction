@@ -2,14 +2,21 @@
 This code is to analysis the atmospheric data from tower.
 """
 
+
+""" Import the package. """
+
 import csv
 import math
 
+
+""" Initialize and announce the variable. """
 
 list_ws, list_ws_perTenMin, list_ws24 = [], [], []
 list_wd, list_wd_perTenMin = [], []
 gust_ws, gust_ws_p10 = [], []
 
+
+""" Data pre-processing. """
 
 def getMode (arr):
 
@@ -23,6 +30,9 @@ def getMode (arr):
                 mode.append(k)
     return mode
 
+
+
+""" Turn the wind direction into 16 bearings. """
 
 def diverseWindDirection (x):
 
@@ -82,6 +92,9 @@ def diverseWindDirection (x):
     else:
         direction.append(90)
         return direction[0]
+
+
+""" Rate the wind speed in Atmospheric specific level. """
 
 def diverseBeaufortScale (x):
 
@@ -143,6 +156,8 @@ def diverseBeaufortScale (x):
         return beaufortScale[0]
 
 
+""" Read the file and get the data we want to analyze. """
+
 inputFile1 = open("10M_tower_data1.csv", 'r')
 dataReader1 = csv.reader(inputFile1)
 
@@ -169,6 +184,9 @@ To get average wind direction.
 
 num, situate = 0, 0
 list_wd_avg, mode, list_mode, list_count, list_new = [], [], [], [], []
+
+
+""" Show wind direction average. """
 
 for i in range(0, len(list_wd), 10):
     list_wd16 = []
